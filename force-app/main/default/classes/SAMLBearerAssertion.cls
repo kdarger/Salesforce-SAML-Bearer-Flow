@@ -11,59 +11,34 @@
  * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  * 
  * https://github.com/salesforceidentity/apex-saml-bearer-flow
+ * 
+ * MODIFICATIONS: 
+ * 
  */
 public class SAMLBearerAssertion {
 
     private String subject;
     //Consumer key from the connected app
-    //private String issuer = '3MVG9ETm0tIcsfrzQRoH0ziLpEBGdEeJE77CJuPk97RiA5RTIM.pQKdgf3ndzUV9eeq2GpoPw7kasGgFiiZw9';
     private String issuer = '3MVG9nthuDc9owbdvLYaK1aek0FHYVlMalynnzKY23ZiOcfde5GL2QQxEGpZiWLpZzWRs3phSUKNXwSsJaVts'; 
-    //private String issuer = '3MVG9ETm0tIcsfrzQRoH0ziLpEPYcnuCImt9O5FqC19vgxs9fknqQ531Tpi9Zg.HcmW04tjVBPDPL4q8O3850'; 
 
-    //private String audience = 'https://login.salesforce.com/services/oauth2/token';
-    //private String audience = 'https://test.salesforce.com';
+    //Community URL (for non-community users, use https://login.salesforce.com or https://test.salesforce.com)
     private String audience = 'https://purple-developer-edition.na72.force.com/purple'; 
     
-    //URL of the community followed by /services/oauth2/token
-    //needs to be added to remote sites
-    //private String action = 'https://purple-179aa78677e-developer-edition.na72.force.com/services/oauth2/token'; 
+    //URL of the community followed by /services/oauth2/token - needs to be added to remote sites
     private String action = 'https://purple-developer-edition.na72.force.com/purple/services/oauth2/token'; 
-    //private String action = 'https://saas-ability-86992-dev-ed.my.salesforce.com/services/oauth2/token';
-    //private String action = 'https://slmrest-purple-sense.cs159.force.com/services/oauth2/token'; 
-    //private String action = 'https://login.salesforce.com/services/oauth2/token'; 
-    //private String action = 'https://test.salesforce.com/services/oauth2/token'; 
 
     private string notBefore;
     private String notOnOrAfter;
     private String assertionId; 
     
-    /** 
-    * This is the private key for the certificate
-    * Export certicate to find key. Is there somewhere more secure to put this? 
-    * Export: https://help.salesforce.com/articleView?id=security_keys_about.htm&type=0
-    * Get Key: https://security.stackexchange.com/questions/3779/how-can-i-export-my-private-key-from-a-java-keytool-keystore 
-    * Convert to pk8: https://stackoverflow.com/questions/35590600/how-do-i-extract-the-private-key-from-a-pkcs12-container-and-save-it-in-pkcs8
-    * keytool -importkeystore -srckeystore existing-store.jks -destkeystore new-store.p12 -deststoretype PKCS12
-    * openssl pkcs12 -in MyCertificates.p12 -out MyCer.pem -clcerts -nokeys
-    * openssl pkcs12 -in MyCertificates.p12 -out MyKey.pem -nocerts -nodes
-    * openssl pkcs8 -topk8 -inform pem -in MyKey.pem -outform pem -nocrypt -out MyKeyCorrectFormat.pem
-    **/
-    //String certificateKey = '123'; 
-
 	//DON'T TOUCH THESE STRINGS
     private String prefix = '<?xml version="1.0" encoding="UTF-8"?>'; 
     private String preCannonicalizedResponse = '<saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" ID="ASSERTION_ID" IssueInstant="NOT_BEFORE" Version="2.0"><saml:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">ISSUER</saml:Issuer><saml:Subject><saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">SUBJECT</saml:NameID><saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:SubjectConfirmationData NotOnOrAfter="NOT_ON_OR_AFTER" Recipient="RECIPIENT"></saml:SubjectConfirmationData></saml:SubjectConfirmation></saml:Subject><saml:Conditions NotBefore="NOT_BEFORE" NotOnOrAfter="NOT_ON_OR_AFTER" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:AudienceRestriction xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:Audience>AUDIENCE</saml:Audience></saml:AudienceRestriction></saml:Conditions><saml:AuthnStatement AuthnInstant="NOT_BEFORE" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"><saml:AuthnContext><saml:AuthnContextClassRef>urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified</saml:AuthnContextClassRef></saml:AuthnContext></saml:AuthnStatement></saml:Assertion>';
     private String preCannonicalizedSignedInfo = '<ds:Reference URI="#ASSERTION_ID"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="ds saml"/></ds:Transform></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod><ds:DigestValue>DIGEST</ds:DigestValue></ds:Reference>';
 
-    //private String preCannonicalizedSignedInfo = '<ds:SignedInfo><ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"></ds:CanonicalizationMethod><ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></ds:SignatureMethod><ds:Reference URI="#ASSERTION_ID"><ds:Transforms><ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><ec:InclusiveNamespaces xmlns:ec="http://www.w3.org/2001/10/xml-exc-c14n#" PrefixList="ds saml"/></ds:Transform></ds:Transforms><ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></ds:DigestMethod><ds:DigestValue>DIGEST</ds:DigestValue></ds:Reference></ds:SignedInfo>';
-    //private String signatureBlock = '<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">SIGNED_INFO<ds:SignatureValue>SIGNATURE_VALUE</ds:SignatureValue></ds:Signature><saml:Subject>';
-    //private String keyInfo = '<ds:KeyInfo><ds:X509Data><ds:X509Certificate>CERTIFICATE_KEY</ds:X509Certificate></ds:X509Data></ds:KeyInfo></ds:Signature>';
-
-    
-
     public SAMLBearerAssertion() {
-        //subject = UserInfo.getUserName();
-        //subject = 'test2@urgensee.com.purpleserviceprovider'; 
+        //The username of the user __in the org they are trying to access__
+        //(i.e. UserInfo.getUsername() may not be correct)
         subject = 'abc35534@def.com'; 
         
         datetime nowDt = datetime.now();
@@ -94,33 +69,16 @@ public class SAMLBearerAssertion {
         //Prepare the SignedInfo
         preCannonicalizedSignedInfo = preCannonicalizedSignedInfo.replaceAll('ASSERTION_ID',assertionId);
         preCannonicalizedSignedInfo = preCannonicalizedSignedInfo.replaceAll('DIGEST',digestString);
-                
+        
+        //sign
         Dom.Document doc = new Dom.Document();
         doc.load(preCannonicalizedResponse);
         Crypto.signXML('RSA-SHA1', doc.getRootElement(), null,  'PurpleSenseSandbox'); 
         return doc.toXmlString();  
-        /*
-        //Sign the SignedInfo
-        Blob input = Blob.valueOf(preCannonicalizedSignedInfo);
-        Blob signature = System.Crypto.signWithCertificate('RSA-SHA1', input, 'PurpleSenseSandbox'); 
-        String signatureString = EncodingUtil.base64Encode(signature);
-        
-        //Prepare the signature block
-        signatureBlock = signatureBlock.replaceAll('SIGNED_INFO',preCannonicalizedSignedInfo);
-        signatureBlock = signatureBlock.replaceAll('SIGNATURE_VALUE',signatureString);
-        
-        //junk I made up??
-        //signatureBlock = signatureBlock.replaceAll('</ds:Signature>',keyInfo);
-        //signatureBlock = signatureBlock.replaceAll('CERTIFICATE_KEY',certificateKey);
-        */
-        //cheap trick for enveloping the signature by swapping out last element with sig + last elements of whole message
-        //preCannonicalizedResponse = preCannonicalizedResponse.replaceAll('<saml:Subject>', signatureBlock );
-        
-        //return the prefix + our prepped message
-        //return prefix + preCannonicalizedResponse;
-        
     }
     
+    //Base64url encoding is different from base64 encoding" + url encoding.
+    //See https://help.salesforce.com/articleView?id=000334987&type=1&mode=1
     private String base64URLencode(Blob input){ 
         String output = encodingUtil.base64Encode(input);
         output = output.replace('+', '-');
@@ -133,19 +91,20 @@ public class SAMLBearerAssertion {
    
     public String postSAML(){
         String saml = getResult();
-        System.debug('\n===============SAML==============\n' + saml);
+        //System.debug('\n===============SAML==============\n' + saml);
+        
         http h = new http();
         httpRequest req = new httpRequest();
         req.setHeader('Content-Type','application/x-www-form-urlencoded');
         req.setMethod('POST');
-        String param = 'grant_type=' + encodingUtil.urlEncode('urn:ietf:params:oauth:grant-type:saml2-bearer','UTF-8')+'&assertion=' + base64URLencode(blob.valueOf(saml)); 
-        param += '&client_id='+issuer; 
+        String param = 'grant_type=' + encodingUtil.urlEncode('urn:ietf:params:oauth:grant-type:saml2-bearer','UTF-8')
+            +'&assertion=' + base64URLencode(blob.valueOf(saml)); 
         req.setBody(param);
         req.setEndpoint(action);
         httpResponse res = h.send(req);
 
-        System.debug('\n\nRESPONSE: ' + res.getBody());
-        System.debug('\n\nRESPONSE: ' + res.getStatusCode() + '  ' + res.getStatus()); 
+        //System.debug('\n\nRESPONSE: ' + res.getBody());
+        //System.debug('\n\nRESPONSE: ' + res.getStatusCode() + '  ' + res.getStatus()); 
         return res.getBody(); 
     }
    
