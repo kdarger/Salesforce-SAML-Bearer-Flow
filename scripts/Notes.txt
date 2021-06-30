@@ -1,0 +1,291 @@
+<saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" 
+ID="ASSERTION_ID" IssueInstant="NOT_BEFORE" Version="2.0">
+<saml:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">
+ISSUER
+</saml:Issuer>
+<saml:Subject>
+<saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">
+SUBJECT
+</saml:NameID>
+<saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+<saml:SubjectConfirmationData NotOnOrAfter="NOT_ON_OR_AFTER" Recipient="RECIPIENT">
+</saml:SubjectConfirmationData></saml:SubjectConfirmation>
+</saml:Subject>
+<saml:Conditions NotBefore="NOT_BEFORE" NotOnOrAfter="NOT_ON_OR_AFTER">
+<saml:AudienceRestriction>
+<saml:Audience>
+AUDIENCE
+</saml:Audience>
+</saml:AudienceRestriction>
+</saml:Conditions>
+<saml:AuthnStatement AuthnInstant="NOT_BEFORE">
+<saml:AuthnContext>
+<saml:AuthnContextClassRef>
+urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified
+</saml:AuthnContextClassRef>
+</saml:AuthnContext>
+</saml:AuthnStatement>
+</saml:Assertion>
+
+<ds:SignedInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+</ds:CanonicalizationMethod>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+</ds:SignatureMethod>
+<ds:Reference URI="#ASSERTION_ID">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+</ds:Transform><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+</ds:Transform></ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+</ds:DigestMethod><ds:DigestValue>DIGEST</ds:DigestValue></ds:Reference></ds:SignedInfo>
+
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+SIGNED_INFO
+<ds:SignatureValue>
+SIGNATURE_VALUE
+</ds:SignatureValue>
+</ds:Signature>
+<saml:Subject>
+
+
+
+
+
+
+<saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" ID="fe8208ed1147fe721c653fd72a895c97290804d5" IssueInstant="2021-06-30T02:52:08Z" Version="2.0">
+<saml:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+3MVG9ETm0tIcsfrzQRoH0ziLpEBGdEeJE77CJuPk97RiA5RTIM.pQKdgf3ndzUV9eeq2GpoPw7kasGgFiiZw9
+</saml:Issuer>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:SignedInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+</ds:CanonicalizationMethod>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+</ds:SignatureMethod>
+<ds:Reference URI="#fe8208ed1147fe721c653fd72a895c97290804d5">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+</ds:Transform><ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"><
+/ds:Transform>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+</ds:DigestMethod>
+<ds:DigestValue>
+/VBblQ9MzCmljzKTiAevSrWgtog=
+</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+BrW/Mp0kwIDTL6jNFmhIsVi2foIy8T0KNhM3rlbJfzdmHWuQH6Q1HNo+GW4GaMv2GFh67sUxUxIvHwKH7NjoYd+/8dtuGAtL3lFg09jsedEHBtXi4N3CeKkJsMY7vGj5BvjB6083gZREiLng4BgZCIIQBNHKw6MO/EUh5YeCBe6UzbopoA+OHRgtsdfX7VSX2T7FRhrINBKHPd4ma2WM5bmqivFx+PpRCBGkMg9EOJymrjPNblyLGUIXnukzPjBZgXCKLuHvZewpPS91g2OhklTH7POp/oe/5Y+k2YIK71+o6WPOQ50PZSjnAHGS42wjAuxZiaNu134lM6z3ZxlhgQ==
+</ds:SignatureValue>
+</ds:Signature>
+<saml:Subject>
+<saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">
+test@urgensee.com.purpleserviceprovider
+</saml:NameID>
+<saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+<saml:SubjectConfirmationData NotOnOrAfter="2021-06-30T02:59:08Z" Recipient="https://purple-179aa78677e-developer-edition.na72.force.com/services/oauth2/token">
+</saml:SubjectConfirmationData>
+</saml:SubjectConfirmation>
+</saml:Subject>
+<saml:Conditions NotBefore="2021-06-30T02:52:08Z" NotOnOrAfter="2021-06-30T02:59:08Z">
+<saml:AudienceRestriction>
+<saml:Audience>
+https://saas-ability-86992-dev-ed.my.salesforce.com
+</saml:Audience>
+</saml:AudienceRestriction>
+</saml:Conditions>
+<saml:AuthnStatement AuthnInstant="2021-06-30T02:52:08Z">
+<saml:AuthnContext>
+<saml:AuthnContextClassRef>
+urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified
+</saml:AuthnContextClassRef>
+</saml:AuthnContext>
+</saml:AuthnStatement>
+</saml:Assertion>
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" ID="1ffa3a9b97b64321dcf63f57f32b8b50374f1eb0" IssueInstant="2021-06-30T03:13:20Z" Version="2.0">
+<saml:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+3MVG9ETm0tIcsfrzQRoH0ziLpEBGdEeJE77CJuPk97RiA5RTIM.pQKdgf3ndzUV9eeq2GpoPw7kasGgFiiZw9
+</saml:Issuer>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:SignedInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+</ds:CanonicalizationMethod>
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1">
+</ds:SignatureMethod>
+<ds:Reference URI="#1ffa3a9b97b64321dcf63f57f32b8b50374f1eb0">
+<ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature">
+</ds:Transform>
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#">
+</ds:Transform>
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1">
+</ds:DigestMethod>
+<ds:DigestValue>
+zraVnBcfp8DzdhCbOIu+EKLNBRM=
+</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+SqNf6NEvnGR6VclEf0IPRUg/RmxqYxHIJ19TRCjukC4uFTJGO25zpOMDUVduBvkVqBxJr2FJM36Noe52hRx86eAbxVvY7s6h0INYUqq9vgt46Be+jrBfg/bv5C9TUJUpa3DBocL1u088Delg2XyPI+uqZJLbu0fEX1Z91cgJLdEwFWd3DZAGnxueAPbNKw7M+hxWDk2ZmHNyvHbBU2qNY0rMxHVVISBGBnEQ3yaDztS78rNM7GnB6OAU6Vy0qYvWhtt6lsjUifL0TLIUxR7lWDEcpYfirIfmRIdkzVXCcQOtbfmZ8mlCz3R9rHuCxCS/U1/aSsP9U8SIU36AdVCpaQ==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificte>
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQCC57u+Upr4R8mIFCf16xDImd8DrO68QIDfPgxbr+2kvuXFYLl2m2ks7uWldGzRJYpq1lbFDoXn50Hf22mIgbptZLgcCy0GLgC8ICQo4s4MVfOj5PdyqUvrmclDDEs+jEJo+xu02PZlSjeAq+l0BDDYnYyv3F1V+ssQSjsKJl1ZyrS6AqseCU8dR8oj5PnK7KkHWhSBYKAtGKaWUSQE40Pdg/oMaRD8+V7ujn/dcnsPGHCZYdire8rFN+PLePodkqAZc4AQ7LHU23drF3k9PZxCCzE4sO+m3SwgKYCSZ7J3S099GZ3DpT7ilheefISKiwKH/xMIx4h7r4yO08gUHk8FAgMBAAECggEAQ6aY2wH7vqXy29V21VtXACStIUwk0LsRHs4FOvkPel2Bh2C2WDp2v1by7W/esLOS9iWxEAOyZieYXqUYxAgvHUu47h1EdnYdwRtnNI4J6EwfLqssyl/9sVN3tKPM2xVHWNO0/OBHbg9N4bx2WJO13qyFQXlD7yQ9/zwtiNBM3BLq3nN8d9x1MqDnxxjF9s/diSPk4lI4WST6UVw34W0AeR8hf0RyyIhdGRR8RKGplX03geQ2y45LO5xfD/XH0vuabE1Nh7CbXeKJw3ogpvsvLgz/ikHMc3kd+HxGvt+qhdIR5u76prQ/Q8ssZaWlNIYFpPj+4JFXKywyaYM1JlcE/QKBgQDas6moFN2UK4ubU9cOpn6mkaqagXimEA0+BgcVGVnyqDY1sxou1T0RJid0pDWYKXd59xu4FJJffZcLDljiUDnIxRVhdDPd2uX7V8IqK7e9CAQnYW8UJkBSQGNUIf3GS+YzzLHK6j3iGjQLwqMhNemfbY319C+0wV8lFXAOz+x85wKBgQCZOvHiQmeUCjOHb782ByBnTE6Jxc2MHIFkyCSO/puC6YZgMA3Xg1BLkJfsGL6FZ4IxUUlN47iP8myHaAw1Rk+CxeBRDOO8xon3mNNJNbMGg5+kCmNfyjDUJdMifa71jbRO/xNgEVZyWNDSoH3e0hXTOBTir77WscUp/Nm3CFCLMwKBgQDWz489c7ksFxVZ7KCYWDqf+wW6Gp9ZZPzMxfjg5XSu3j/YwOFfzLzdgj9Q1xV5LomWt3t3dGVM+7uG9YGiULBhHgthHFTxfVdVZ55j82rWdfA2igIjpWqaH3owoe50fgpPKKgdKbS8x4YFYxj9vsmIeX/ta/oLrb95WjQlqF6dUwKBgEnKujv1ML55XzFlHlddfTxh4hy1NnS4MZQgUoLOmIOmBIGEAtZ7tYp+ertHe1DxdSBc/glVlkc0PxHCiMaLMrVOp+VAaNg7YKvtXCsQgkOr1ZCBNDQoQfWYtaIRltVIRcIZUvJbxx7QKNiWU6ef0sTiaCR28FeiSsoaq5palbdDAoGBANM1zYBcSn8mF7o7KUgjQwfbWXXemrDMavmRiGr2JaHAgAduKodIgDNOLEgXoj+T9heV+6v7/VnYv0oncg761bC+AnSRoudCQPd26BE2M/uWHfw/S2OZff3jK+Iy24N0+Hi/aqIF33ogVZsK5Q/CSquIU+Eems2V4PQ9idnpnAEy
+</ds:X509Certificte>
+</ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature>
+<saml:Subject>
+<saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">
+test@urgensee.com.purpleserviceprovider
+</saml:NameID>
+<saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+<saml:SubjectConfirmationData NotOnOrAfter="2021-06-30T03:20:20Z" Recipient="https://purple-179aa78677e-developer-edition.na72.force.com/services/oauth2/token">
+</saml:SubjectConfirmationData></saml:SubjectConfirmation>
+</saml:Subject>
+<saml:Conditions NotBefore="2021-06-30T03:13:20Z" NotOnOrAfter="2021-06-30T03:20:20Z">
+<saml:AudienceRestriction>
+<saml:Audience>
+https://purple-179aa78677e-developer-edition.na72.force.com/services/oauth2/token
+</saml:Audience>
+</saml:AudienceRestriction>
+</saml:Conditions>
+<saml:AuthnStatement AuthnInstant="2021-06-30T03:13:20Z">
+<saml:AuthnContext>
+<saml:AuthnContextClassRef>
+urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified
+</saml:AuthnContextClassRef>
+</saml:AuthnContext>
+</saml:AuthnStatement>
+</saml:Assertion>
+
+
+https://purple-developer-edition.na72.force.com/purple/services/oauth2/authorize?
+client_id=3MVG9nthuDc9owbdvLYaK1aek0FHYVlMalynnzKY23ZiOcfde5GL2QQxEGpZiWLpZzWRs3phSUKNXwSsJaVts&
+redirect_uri=https://purple-developer-edition.na72.force.com/purple/services/oauth2/callback&
+response_type=code
+
+https://slmrest-purple-sense.cs159.force.com/services/oauth2/callback
+
+<?xml version="1.0" encoding="UTF-8"?>
+<saml:Assertion xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion" ID="3c9636fbb9c8e92207cca664a2d3009cd7fe7a84" IssueInstant="2021-06-30T21:57:06Z" Version="2.0">
+<saml:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+3MVG9nthuDc9owbdvLYaK1aek0FHYVlMalynnzKY23ZiOcfde5GL2QQxEGpZiWLpZzWRs3phSUKNXwSsJaVts
+</saml:Issuer>
+<?xml version="1.0" encoding="UTF-8"?>
+<saml:Assertion ID="3c9636fbb9c8e92207cca664a2d3009cd7fe7a84" IssueInstant="2021-06-30T21:57:06Z" Version="2.0" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+<saml:Issuer Format="urn:oasis:names:tc:SAML:2.0:nameid-format:entity">
+3MVG9nthuDc9owbdvLYaK1aek0FHYVlMalynnzKY23ZiOcfde5GL2QQxEGpZiWLpZzWRs3phSUKNXwSsJaVts
+</saml:Issuer>
+<saml:Subject>
+<saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified">
+abc35534@def.com
+</saml:NameID>
+<saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer">
+<saml:SubjectConfirmationData NotOnOrAfter="2021-06-30T22:04:06Z" Recipient="https://purple-developer-edition.na72.force.com/purple/services/oauth2/token" />
+</saml:SubjectConfirmation>
+</saml:Subject>
+<saml:Conditions NotBefore="2021-06-30T21:57:06Z" NotOnOrAfter="2021-06-30T22:04:06Z">
+<saml:AudienceRestriction>
+<saml:Audience>https://login.salesforce.com</saml:Audience>
+</saml:AudienceRestriction>
+</saml:Conditions>
+<saml:AuthnStatement AuthnInstant="2021-06-30T21:57:06Z">
+<saml:AuthnContext>
+<saml:AuthnContextClassRef>
+urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified
+</saml:AuthnContextClassRef>
+</saml:AuthnContext>
+</saml:AuthnStatement>
+<ds:Signature xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+<ds:SignedInfo>
+<ds:CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+<ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1" />
+<ds:Reference URI="#3c9636fbb9c8e92207cca664a2d3009cd7fe7a84"><ds:Transforms>
+<ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature" />
+<ds:Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#" />
+</ds:Transforms>
+<ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+<ds:DigestValue>/n1WqR6fp5UHkv3xvOgGS4Rg4Sg=</ds:DigestValue>
+</ds:Reference>
+</ds:SignedInfo>
+<ds:SignatureValue>
+MsiHY1Hb9wkzQd8ZGI2rT82+J1uN6RBZxK7sbGprgyJmclx56zKMNqnyJo3bPSFdKYyrwObxZzGz
+DYZqsVfrZXX2IsDKAWNkpwOXPo6hNMUhGSglS/Z5o8+r/jCU0ae+W4m22PEqEk4MHUn3Qmw3stDB
+uZmuNzGeVklMClq/hZOPG0chYap5I5mJ5ThqchnpTA79rzDgjCkCanYVze6oKy7CuewFuu6Z+Wtd
+O294jLQjbF8g0FtX7Djh9UyhhKfAExcVuKgbYDPFE1ABimNDZ0zduC9lSvhetNLyjQMssSYzALAD
+aqzgufc0H1wXvM8EvJTDZUnsqWck55cwMG3KWg==
+</ds:SignatureValue>
+<ds:KeyInfo>
+<ds:KeyValue>
+<ds:RSAKeyValue>
+<ds:Modulus>
+gue7vlKa+EfJiBQn9esQyJnfA6zuvECA3z4MW6/tpL7lxWC5dptpLO7lpXRs0SWKatZWxQ6F5+dB
+39tpiIG6bWS4HAstBi4AvCAkKOLODFXzo+T3cqlL65nJQwxLPoxCaPsbtNj2ZUo3gKvpdAQw2J2M
+r9xdVfrLEEo7CiZdWcq0ugKrHglPHUfKI+T5yuypB1oUgWCgLRimllEkBOND3YP6DGkQ/Ple7o5/
+3XJ7DxhwmWHYq3vKxTfjy3j6HZKgGXOAEOyx1Nt3axd5PT2cQgsxOLDvpt0sICmAkmeyd0tPfRmd
+w6U+4pYXnnyEiosCh/8TCMeIe6+MjtPIFB5PBQ==
+</ds:Modulus>
+<ds:Exponent>
+AQAB
+</ds:Exponent>
+</ds:RSAKeyValue>
+</ds:KeyValue>
+<ds:X509Data>
+<ds:X509Certificate>
+MIIEhDCCA2ygAwIBAgIOAXomXm6TAAAAAEsDtBIwDQYJKoZIhvcNAQELBQAwgYMxGzAZBgNVBAMM
+ElB1cnBsZVNlbnNlU2FuZGJveDEYMBYGA1UECwwPMDBEN1gwMDAwMDBFRU9EMRcwFQYDVQQKDA5T
+YWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0ExDDAKBgNV
+BAYTA1VTQTAeFw0yMTA2MTkyMjIyNDBaFw0yMjA2MTkxMjAwMDBaMIGDMRswGQYDVQQDDBJQdXJw
+bGVTZW5zZVNhbmRib3gxGDAWBgNVBAsMDzAwRDdYMDAwMDAwRUVPRDEXMBUGA1UECgwOU2FsZXNm
+b3JjZS5jb20xFjAUBgNVBAcMDVNhbiBGcmFuY2lzY28xCzAJBgNVBAgMAkNBMQwwCgYDVQQGEwNV
+U0EwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCC57u+Upr4R8mIFCf16xDImd8DrO68
+QIDfPgxbr+2kvuXFYLl2m2ks7uWldGzRJYpq1lbFDoXn50Hf22mIgbptZLgcCy0GLgC8ICQo4s4M
+VfOj5PdyqUvrmclDDEs+jEJo+xu02PZlSjeAq+l0BDDYnYyv3F1V+ssQSjsKJl1ZyrS6AqseCU8d
+R8oj5PnK7KkHWhSBYKAtGKaWUSQE40Pdg/oMaRD8+V7ujn/dcnsPGHCZYdire8rFN+PLePodkqAZ
+c4AQ7LHU23drF3k9PZxCCzE4sO+m3SwgKYCSZ7J3S099GZ3DpT7ilheefISKiwKH/xMIx4h7r4yO
+08gUHk8FAgMBAAGjgfMwgfAwHQYDVR0OBBYEFF8dRLD9QpKXqRXelFZpsYQ9isOYMA8GA1UdEwEB
+/wQFMAMBAf8wgb0GA1UdIwSBtTCBsoAUXx1EsP1CkpepFd6UVmmxhD2Kw5ihgYmkgYYwgYMxGzAZ
+BgNVBAMMElB1cnBsZVNlbnNlU2FuZGJveDEYMBYGA1UECwwPMDBEN1gwMDAwMDBFRU9EMRcwFQYD
+VQQKDA5TYWxlc2ZvcmNlLmNvbTEWMBQGA1UEBwwNU2FuIEZyYW5jaXNjbzELMAkGA1UECAwCQ0Ex
+DDAKBgNVBAYTA1VTQYIOAXomXm6TAAAAAEsDtBIwDQYJKoZIhvcNAQELBQADggEBAFmEWMjBrC+8
+MIYaB5mLykqoHrJi53tvPqWvrB1DRn4blsfzPuoLkIoG9SO46LI9DGZUbi+2xMStCY+Qh1f2cIY2
+mGUF8JSqjZoahk4afWW/8Mly3JQLAx9GlkS06wXifdUh4Fe/7impcQL0QizLeM83bP3Ij79LaSQg
+9jIZDZ3rAOepLuDVY5/dOtVfBaeti3gXu8YG3VS83xYcTV0frPNqvq6voRjqw5WnxaPccwvWmQE/
+AMUtZsJGdwUZuO1VqxSFSGCdvLrIQQ31EPaSFUGK4MMMkZRy0Hasd3VeWUJ8lxYEpeFjab+Vj7Dg
++3mpGS037I8wErg6At5H85O49mA=
+</ds:X509Certificate>
+</ds:X509Data>
+</ds:KeyInfo>
+</ds:Signature>
+</saml:Assertion>
+<saml:NameID Format="urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+abc35534@def.com
+</saml:NameID>
+<saml:SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+<saml:SubjectConfirmationData NotOnOrAfter="2021-06-30T22:04:06Z" Recipient="https://purple-developer-edition.na72.force.com/purple/services/oauth2/token">
+</saml:SubjectConfirmationData>
+</saml:SubjectConfirmation>
+</saml:Subject>
+<saml:Conditions NotBefore="2021-06-30T21:57:06Z" NotOnOrAfter="2021-06-30T22:04:06Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+<saml:AudienceRestriction xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+<saml:Audience>
+https://login.salesforce.com
+</saml:Audience>
+</saml:AudienceRestriction>
+</saml:Conditions>
+<saml:AuthnStatement AuthnInstant="2021-06-30T21:57:06Z" xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion">
+<saml:AuthnContext>
+<saml:AuthnContextClassRef>
+urn:oasis:names:tc:SAML:2.0:ac:classes:unspecified
+</saml:AuthnContextClassRef>
+</saml:AuthnContext>
+</saml:AuthnStatement>
+</saml:Assertion>
