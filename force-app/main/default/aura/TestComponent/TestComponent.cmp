@@ -1,0 +1,6 @@
+<aura:component controller="SAMLBearerAssertion" implements="forceCommunity:availableForAllPageTypes" access="global">
+    <lightning:card title="Test">
+        Test component
+        <lightning:button label="Get Token" onclick="{!c.doInit}"/>
+    </lightning:card>
+</aura:component>	
